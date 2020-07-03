@@ -216,7 +216,9 @@ export default class TextField extends PureComponent {
       this.startLabelAnimation();
     }
     
-    this.setState({ text: this.props.value});
+    if(this.state.text !== this.props.value){
+      this.setState({text: this.props.value});
+    }
   }
 
   startFocusAnimation() {
